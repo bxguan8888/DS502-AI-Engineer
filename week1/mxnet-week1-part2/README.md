@@ -1,55 +1,15 @@
-# MXNET-Week2
+##Week1 Part2 Homework
 
-## Useful git commands
- 
-    git init # init a repo 
-    git status # check the status of current branch 
-    git clone # clone a repo from github 
-    git add # add untracked files 
-    git commit # make the commit change to the branch 
-    git push # push the changes to github 
-    git pull # pull the changes from github 
-
-## Pycharm feature for gtihub 
-    Version Control 
-    Mark down for readme 
-    Terminal 
-    
-## Setup AWS account 
-
-### AWS website 
-    https://aws.amazon.com/
-### Sign Up
-
-    Email account
-    Credit Card 
-    ~50 us dollar budget for our project if GPU is in your plan
-
-### AWS Deep Learning pre-built instance 
-    https://aws.amazon.com/marketplace/pp/B01M0AXXQB
-    
-### Steps to start a GPU instance in AWS 
-    1) Sign up a AWS account with credit card bounded 
-    2) Search for the Deep Learning AMI (free) by the link above
-    3) Start a new instance from Deep Learnining AMI 
-        1) US West (Oregon)	ami-296e7850 -> Lanuch with
-        2) Enable public ip address
-        3) select one of them 
-            g2.2xlarge g2.8xlarge p2.xlarge p2.2xlarge p2.8large p2.16xlarge
-        4) Security Group -> default 22, (optional) 8888 6006 port
-        5) For storage, 50~100G is sufficient
-        6) Create and download key-pair, such as "*.pem"
-        7) run "ssh -i *.pem ec2-user@publicip"
-        8) When in the instance, run "nvidia-smi" and "nvcc --version" to check the availbility of GPU
-   4) Setup jupyter notebook https://blog.keras.io/running-jupyter-notebooks-on-gpu-on-aws-a-starter-guide.html        
-### IMPORTANT NOTICE 
-    !!! STOP THE INSTSNCE ONCE YOU DON'T NEED IT
-    !!! TERMINATE THE INSTANCE WHEN YOU FINSHED THE PROJECT 
-    !!! UNLINK THE CREDIT CARD INFO FROM AWS ONCE YOU DON'T USE AWS
-    !!! IT COSTS MONEY FOR EVERY SECOND YOU USE THE INSTANCES
-
-### Useful info
-
-Change the type of an instance 
-    Right click on the instance -> Instance Setting -> Change Instance Type 
-     
+1. Finish "TDDO" in "mxnet-week2/mlp_sym.py" and "train_mlp.py"
+   - Done. Implemented both CNN and Inception V1
+2. Upload the network architecture you design to your repository
+	- Done. Save pdf file under current folder
+3. Compare the accuracy and the training time between MLP and CNN
+	- snapshot
+	  - MLP <img width="704" alt="mlp" src="https://user-images.githubusercontent.com/5523662/31750238-b95de23a-b44c-11e7-90aa-314378d5aceb.png">
+	  - CNN<img width="671" alt="cnn" src="https://user-images.githubusercontent.com/5523662/31750240-baa623e6-b44c-11e7-8fa5-7c5bdb8fbe0e.png">
+	  - Inception <img width="806" alt="inception_v1" src="https://user-images.githubusercontent.com/5523662/31750241-bb96f3b6-b44c-11e7-8713-269655f2fd1a.png">
+	  - Comparison
+	    - MLP:  Acc(10 epoch) 0.977, GPU Epoch Time: 1.453
+	    - CNN:  Acc(10 epoch) 0.993, GPU Epoch Time: 2.140
+	    - Inception:  Acc(10 epoch) 0.984, GPU Epoch Time: 3.435

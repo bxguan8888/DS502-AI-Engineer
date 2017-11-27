@@ -2,5 +2,6 @@ week2/cifar10_train.rec
 week2/cifar10_val.rec
 week1/derby.log
 week1/metastore_db/
-week2/.ipynb_checkpoints/
 week2/resnet.pyc
+week2/logs/
+week2/models/

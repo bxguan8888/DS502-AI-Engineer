@@ -5,3 +5,17 @@ week1/metastore_db/
 week2/resnet.pyc
 week2/logs/
 week2/models/
+.npy
+.idea/
+YOLO/logs/
+YOLO/DATA_rec/
+*.pyc
+*.params
+*.zip
+*.tar.gz
+*.rec
+*.idx
+*.jpg
+*.idl
+.idea
+*.json

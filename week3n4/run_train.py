@@ -83,9 +83,9 @@ if __name__ == "__main__":
 
     else:
     #enable it if you want to use tensorboard
-        eval_end_callback = LogMetricsCallback('logs/val-' + str(tme))
+        eval_end_callback = LogMetricsCallback('logs/val-' + str(tme), "eval-batch")
         batch_end_callback = [mx.callback.Speedometer(batch_size=32, frequent=10, auto_reset=False),
-                          LogMetricsCallback('logs/train-' + str(tme))]
+                          LogMetricsCallback('logs/train-' + str(tme), "train-batch")]
         metric = LossMetric(0.5)
 
     # setup monitor for debugging 

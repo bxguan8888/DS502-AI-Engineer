@@ -19,7 +19,7 @@ if __name__ == "__main__":
     batch_size = 32
     context = mx.gpu(0)
     checkpoint_interval = 5
-    num_epoch = 600
+    num_epoch = 60
 
     # get sym
     # Try different network 18, 50, 101 to find the best one

@@ -1,6 +1,7 @@
 import mxnet as mx
 import numpy as np
 import cv2
+import random
 
 
 # get iterator
@@ -67,6 +68,13 @@ if __name__ == "__main__":
     imgroot = "./DATA/"
     annotation = np.load("./DATA/annotation_list.npy")[()]
     imglist = annotation.keys()
+    random.shuffle(imglist)
+    training_label = imglist[:435]
+    val_label = imglist[435:]
+
     sizet = 224
-    name = "./DATA_rec/cat"
-    toRecFile(imgroot, imglist, annotation, sizet, (7,7,5), 32, name)
+    training_file_name = "./DATA_rec/train_cat"
+    toRecFile(imgroot, imglist, annotation, sizet, (7,7,5), 32, training_file_name)
+
+    val_file_name = "./DATA_rec/val_cat"
+    toRecFile(imgroot, imglist, annotation, sizet, (7,7,5), 32, val_file_name)

@@ -94,7 +94,7 @@ if __name__ == "__main__":
     mon = None #mx.mon.Monitor(10, norm_stat, pattern=".*backward*.")
 
     # save model
-    checkpoint = mx.callback.do_checkpoint('cat_detect_full_scale', checkpoint_interval)
+    checkpoint = mx.callback.do_checkpoint('models/cat_detect_full_scale', checkpoint_interval)
 
     # Train
     # Try different hyperparamters to get the model converged, (batch_size,

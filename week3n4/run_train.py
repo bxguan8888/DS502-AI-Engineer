@@ -28,8 +28,8 @@ if __name__ == "__main__":
 
     # get some input
     # change it to the data rec you create, and modify the batch_size
-    train_data = get_iterator(path='DATA_rec/cat_small.rec', data_shape=(3, 224, 224), label_width=7*7*5, batch_size=batch_size, shuffle=True)
-    val_data = get_iterator(path='DATA_rec/cat_small.rec', data_shape=(3, 224, 224), label_width=7*7*5, batch_size=batch_size)
+    train_data = get_iterator(path='DATA_rec/train_cat.rec', data_shape=(3, 224, 224), label_width=7*7*5, batch_size=batch_size, shuffle=True)
+    val_data = get_iterator(path='DATA_rec/val_cat.rec', data_shape=(3, 224, 224), label_width=7*7*5, batch_size=batch_size)
     
     # allocate gpu/cpu mem to the sym
     mod = mx.mod.Module(symbol=sym, context=context)
@@ -105,7 +105,7 @@ if __name__ == "__main__":
             monitor=mon,
             eval_metric=metric,
             optimizer='rmsprop',
-            optimizer_params={'learning_rate':0.01, 'lr_scheduler': mx.lr_scheduler.FactorScheduler(300000, 0.1, 0.001)},
+            optimizer_params={'learning_rate':0.001, 'lr_scheduler': mx.lr_scheduler.FactorScheduler(300000, 0.1, 0.001)},
             initializer=mx.init.Xavier(magnitude=2, rnd_type='gaussian', factor_type='in'),
             arg_params=args_params,
             aux_params=aux_params,

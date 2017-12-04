@@ -19,7 +19,7 @@ def YOLO_loss(predict, label):
     # weight different target differently
     lambda_coord = 5
     lambda_obj = 1
-    lambda_noobj = 0.2
+    lambda_noobj = 0.5
     mask = cl*lambda_obj+(1-cl)*lambda_noobj
 
     # linear regression
